@@ -1,0 +1,30 @@
+.industry {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid var(--white);
+  border-radius: 2rem;
+  height: 3.5rem;
+  padding: 0 1.5rem;
+}
+
+.industry-list {
+  display:flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.industry span {
+  font-size: var(--sm-text);
+  color: var(--white);
+  font-weight: 400;
+  text-transform: initial;
+  margin-right: 1rem;
+  text-wrap: nowrap;
+}
+
+.industry-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--white);
+}

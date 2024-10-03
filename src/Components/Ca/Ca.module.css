@@ -1,0 +1,50 @@
+.ca {
+  min-height: 30rem;
+  width: 100%;
+  padding: 1rem;
+  user-select: none;
+}
+
+.ca,
+.ca-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ca-box {
+  max-width: 76rem;
+  text-align: center;
+}
+
+.ca h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.ca p {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .ca {
+    padding: 2rem;
+  }
+
+  .ca h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ca {
+    padding: 4rem;
+  }
+
+  .ca h3 {
+    font-size: 3rem;
+  }
+}

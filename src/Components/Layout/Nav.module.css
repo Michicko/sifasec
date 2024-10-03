@@ -1,0 +1,142 @@
+.nav {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: auto;
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo span {
+  font-size: var(--md-text);
+  font-weight: 600;
+  color: var(--blue-700);
+}
+
+.nav-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  position: relative;
+  z-index: 500;
+}
+
+.nav-icon {
+  height: 3rem;
+  width: 3rem;
+  color: var(--blue-600);
+}
+
+.nav-contact-btn {
+  display: none !important;
+}
+
+.nav-mobile {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 400;
+  transform: translateX(-100%);
+  transition: transform 0.5s linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.isOpened {
+  transform: translateX(0);
+}
+.nav-links {
+  display: none;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: var(--lg-text);
+  font-weight: 500;
+  color: var(--gray-700);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--blue-400);
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    border-bottom: 1px solid var(--gray-100);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: var(--sm-text);
+    text-transform: capitalize;
+    margin: 0 2rem;
+  }
+  .nav-links > *:last-child {
+    margin-right: 0;
+  }
+
+  .nav-contact-btn {
+    display: flex !important;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  .nav {
+    width: 100%;
+    height: 8rem;
+  }
+
+  .nav-link {
+    margin: 0 4rem;
+    font-size: var(--base-text);
+  }
+
+  .nav-links > *:last-child {
+    margin-right: 0;
+  }
+
+  .nav-logo img {
+    width: 3rem;
+    margin-right: 0.8rem;
+  }
+
+  .nav-logo span {
+    font-size: var(--lg-text);
+  }
+}
