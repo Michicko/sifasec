@@ -3,6 +3,8 @@ import Root from "./Components/Layout/Root";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Services from "./pages/Services";
+import Blog from "./pages/Blog";
 
 function App() {
   return createBrowserRouter([
@@ -17,6 +19,14 @@ function App() {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/services",
+          element: <Services />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
         },
         {
           path: "/contact",

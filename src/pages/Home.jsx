@@ -37,10 +37,10 @@ export default function Home() {
         <h2 className="secondary-heading">Platform-enabled services</h2>
         <Services />
       </section>
-      <Ca />
+    
       <section className="section section-industry">
         <div className="top">
-          <h3 className="light">We deliver a diverse range of state of the art solutions.</h3>
+          <h3 className="light">We deliver a diverse range of state of the art solutions across industries</h3>
           <p>
             Every company and every industry is different. Regulations and
             compliance requirements vary. Threat actors might have special
@@ -52,6 +52,7 @@ export default function Home() {
           <Industries />
         </div>
       </section>
+      <Ca />
     </>
   );
 }

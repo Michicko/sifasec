@@ -14,6 +14,9 @@ import Hospitality from "../assets/icons/hospitality.svg?react";
 import Smes from "../assets/icons/sme.svg?react";
 import Technology from "../assets/icons/technology.svg?react";
 import Utilities from "../assets/icons/utilities.svg?react";
+import Solution from "../assets/icons/solutions.svg?react";
+import Service from "../assets/icons/service.svg?react";
+import Relationship from "../assets/icons/handshake.svg?react";
 // import Vision from "../../assets/icons/vision.svg?react";
 // import Mission from "../../assets/icons/mission.svg?react";
 // import Why from "../../assets/icons/why.svg?react";
@@ -1468,3 +1471,21 @@ export const experiences = [
     text: "We go the extra mile - providing communication, support and valued services you need to confidently take on tomorrow's challengs.",
   },
 ];
+
+export const trusts = [
+    {
+    icon: <Service />,
+    title: "Comprehensive Solutions",
+    text: "Industry-specific cyber risk management and compliance services.",
+  },
+  {
+    icon: <Solution/>,
+    title: "Personalized Service",
+    text: "Comprehensive security tailored to your industry's unique needs.",
+  },
+  {
+    icon: <Relationship />,
+    title: "Long Lasting Relationships",
+    text: "We go the extra mile providing support and valued services.",
+  },
+]

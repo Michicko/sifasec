@@ -9,21 +9,32 @@
 
 .service {
   padding: 2rem;
-  background: var(--gray-60);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   min-height: 20rem;
-  transition: background .2s linear;
+  transition: background 0.2s linear;
+  background: var(--gray-50);
 }
+
+.service.light {
+  background: transparent;
+  border: 1px solid rgba(247, 249, 255, 0.6);
+  border-radius: 0.5rem;
+}
+
 .service:hover {
-  background: var(--gray-100);
+  /* background: var(--gray-100); */
+}
+
+.service.light:hover {
+  background: transparent;
 }
 
 .service svg {
-  margin-bottom: 3.5rem;
-  height: 4rem;
-  width: 4rem;
+  margin-bottom: 3rem;
+  height: 5rem;
+  width: 5rem;
   fill: var(--blue-300);
 }
 
@@ -34,4 +45,13 @@
   margin-bottom: 2rem;
   width: 75%;
   margin-top: auto;
+}
+
+.service.light svg {
+  fill: var(--white);
+}
+
+.service.light h3,
+.service.light p {
+  color: var(--white);
 }

@@ -49,6 +49,17 @@ h1 {
   line-height: 1.6;
 }
 
+header.header.no-bottom{
+  min-height: 30rem;
+}
+
+header.header.no-bottom .container{
+  min-height: 25rem;
+  padding-bottom: 0;
+  gap: 0;
+}
+
+
 @media only screen and (min-width: 480px) {
   header.header {
     padding: 0 2rem;
@@ -83,6 +94,7 @@ h1 {
     column-gap: 5rem;
   }
 
+ 
   .top > *:nth-child(1) {
     grid-area: h;
   }
@@ -97,6 +109,25 @@ h1 {
 
   h1 {
     margin-bottom: 3rem;
+  }
+
+  .top.no-text {
+    grid-template-columns: 1fr;
+    grid-template-areas: unset;
+    column-gap: 0;
+    justify-content: flex-start;
+    padding-right: 5rem;
+  }
+
+
+  .top.no-text > *:nth-child(1),
+  .top.no-text > *:nth-child(2),
+  .top.no-text > *:nth-child(3) {
+    grid-area: unset;
+  }
+
+  .top.no-text > *:nth-child(1) {
+    max-width: 76rem;
   }
 
   .top p {
@@ -126,7 +157,7 @@ h1 {
     font-size: 5rem;
   }
 
-  .top p{
+  .top p {
     font-size: var(--base-text);
   }
 }

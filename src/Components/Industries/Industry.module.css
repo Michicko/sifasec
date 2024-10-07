@@ -8,8 +8,12 @@
   padding: 0 1.5rem;
 }
 
+.industry.dark {
+  border-color: var(--accent);
+}
+
 .industry-list {
-  display:flex;
+  display: flex;
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -27,4 +31,9 @@
   height: 1.5rem;
   width: 1.5rem;
   color: var(--white);
+}
+
+.industry.dark .industry-icon,
+.industry.dark >  span {
+  color: var(--gray-600);
 }
