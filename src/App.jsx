@@ -1,17 +1,25 @@
 import { Route, Routes } from "react-router-dom";
 import Root from "./Components/Layout/Root";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Services from "./pages/Services";
-import Blog from "./pages/Blog";
 import useScrollToTop from "./hooks/useScrollToTop";
+import { lazy, Suspense } from "react";
+
+const Home = lazy(() => import("./pages/Home.jsx"));
+const About = lazy(() => import("./pages/About.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
+const Services = lazy(() => import("./pages/Services.jsx"));
+const Blog = lazy(() => import("./pages/Blog.jsx"));
 
 export default function App() {
   useScrollToTop();
   return (
     <Routes>
-      <Route element={<Root />}>
+      <Route
+        element={
+          <Suspense fallback={null}>
+            <Root />
+          </Suspense>
+        }
+      >
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
