@@ -10,6 +10,7 @@
   --gray-60: #f7f7f9;
   --gray-100: #f2f3f6;
   --gray-200: #cac4c4;
+  --gray-400: #777777;
   --gray-600: #242b2e;
   --gray-700: #1f2022;
   --border: 1px solid rgba(208, 211, 212, 0.5);
@@ -90,6 +91,7 @@ body {
   text-decoration: none;
   padding-right: 2.5rem;
   cursor: pointer;
+  background: transparent;
 }
 
 .btn.header-btn {
@@ -107,7 +109,23 @@ body {
   color: var(--white);
 }
 
-/* utilities */
+.btn.light {
+  border-color: var(--white);
+}
+
+.btn.light span:last-child {
+  color: var(--white);
+}
+
+.btn.light .icon-box {
+  background: var(--white);
+}
+
+.btn.light .btn-icon {
+  color: var(--blue-400);
+}
+
+
 
 h2,
 .section.section-industry .top h3,
@@ -209,12 +227,14 @@ p {
   margin-bottom: 1rem;
 }
 
-
 /* contact us page */
 .contact {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
+}
+
+.contact > .left >:nth-child(2){
+  margin-bottom: 2rem;
 }
 
 .contact-form-box {
@@ -222,10 +242,106 @@ p {
   background: var(--blue-400);
   border-radius: 1rem;
   overflow: hidden;
+  padding: 2rem;
+}
+
+.contact-form-box h2 {
+  font-size: 2.5rem;
 }
 
 .contact h1 {
   margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "name"
+    "email"
+    "message"
+    "btn";
+  gap: 2rem;
+}
+
+.contact-form > *:nth-child(1) {
+  grid-area: name;
+}
+
+.contact-form > *:nth-child(2) {
+  grid-area: email;
+}
+
+.contact-form > *:nth-child(3) {
+  grid-area: message;
+}
+.contact-form > *:nth-child(4) {
+  grid-area: btn;
+  justify-self: flex-end;
+}
+
+/* utilities */
+input[type="text"],
+input[type="email"] {
+  height: 3.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 1rem;
+
+  border-radius: 0.5rem;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--gray-400);
+}
+
+label, input[type="text"],
+input[type="email"],
+textarea  {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--gray-600);
+}
+
+label{
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+
+.light {
+  color: var(--white) !important;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.info{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.info .icon{
+  color: var(--blue-300);
+}
+
+.infos{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 @media only screen and (min-width: 480px) {
@@ -244,9 +360,22 @@ p {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "name email"
+      "message message"
+      "btn btn";
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .btn.header-btn {
     justify-self: flex-start;
+  }
+  .contact {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .btn span:last-child {

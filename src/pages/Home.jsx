@@ -40,7 +40,7 @@ export default function Home() {
       <Ca />
       <section className="section section-industry">
         <div className="top">
-          <h3>We deliver a diverse range of state of the art solutions.</h3>
+          <h3 className="light">We deliver a diverse range of state of the art solutions.</h3>
           <p>
             Every company and every industry is different. Regulations and
             compliance requirements vary. Threat actors might have special
