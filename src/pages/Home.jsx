@@ -1,11 +1,10 @@
 import Header from "../Components/Layout/Header";
 import HeaderBottom from "../Components/Layout/HeaderBottom";
 import HeaderTop from "../Components/Layout/HeaderTop";
-import Icon from "@mdi/react";
-import { mdiArrowTopRight } from "@mdi/js";
 import Services from "../Components/Services/Services";
 import Industries from "../Components/Industries/Industries";
 import Ca from "../Components/Ca/Ca";
+import Button from "../Components/Button";
 
 export default function Home() {
   return (
@@ -17,12 +16,7 @@ export default function Home() {
             Take on tomorrow&apos;s challenge securely with our cutting-edge and
             comprehensive cybersecurity solutions.
           </p>
-          <a href="#" target="_blank" className="btn header-btn">
-            <span className="icon-box">
-              <Icon path={mdiArrowTopRight} className="icon btn-icon" />
-            </span>
-            <span>Run a quick scan</span>
-          </a>
+          <Button text={"Get started"} url={"/contact"} />
         </HeaderTop>
         <HeaderBottom>
           <img
@@ -37,10 +31,13 @@ export default function Home() {
         <h2 className="secondary-heading">Platform-enabled services</h2>
         <Services />
       </section>
-    
+
       <section className="section section-industry">
         <div className="top">
-          <h3 className="light">We deliver a diverse range of state of the art solutions across industries</h3>
+          <h3 className="light">
+            We deliver a diverse range of state of the art solutions across
+            industries
+          </h3>
           <p>
             Every company and every industry is different. Regulations and
             compliance requirements vary. Threat actors might have special

@@ -61,7 +61,7 @@ export default function About() {
             your security posture, or something in between, we&apos;ve got your
             back.
           </p>
-          <Button text={"Talk with Sifasec"} />
+          <Button text={"Talk with Sifasec"} url={'/contact'} />
         </div>
       </section>
     </>
