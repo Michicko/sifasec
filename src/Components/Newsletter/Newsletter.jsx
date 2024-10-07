@@ -3,6 +3,10 @@ import Icon from "@mdi/react";
 import { mdiArrowTopRight } from "@mdi/js";
 
 export default function Newsletter() {
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.newsletter}>
       <h6>Newsletter</h6>
@@ -10,7 +14,10 @@ export default function Newsletter() {
         Sign up for the latest tips, thoughts and insights from us about
         cybersecurity.
       </p>
-      <form className={styles["newsleter-form"]}>
+      <form
+        className={styles["newsleter-form"]}
+        onSubmit={handleNewsletterSubmit}
+      >
         <div className={styles["newsletter-form-group"]}>
           <input
             type="email"

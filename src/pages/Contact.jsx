@@ -6,10 +6,75 @@ import {
   mdiEmailOutline,
   mdiPhoneInTalkOutline,
 } from "@mdi/js";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Alert from "../Components/Alert/Alert";
 
 export default function Contact() {
+  const formRef = useRef(null);
+  const config = {
+    serviceId: "service_2b8iwla",
+    templateId: "template_pxqx97o",
+    publicKey: "oVMW3bIannPYMEZdv",
+  };
+
+  const [formStatus, setFormStatus] = useState({
+    message: "",
+    status: "",
+    showAlert: "",
+  });
+
+  const resetFormStatus = () => {
+    setFormStatus({
+      message: "",
+      status: "",
+      showAlert: false,
+    });
+  };
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    try {
+      setFormStatus({
+        message: "Message sent. We'll get back to you shortly.",
+        status: "success",
+        showAlert: true,
+      });
+      const res = await emailjs.sendForm(
+        config.serviceId,
+        config.templateId,
+        formRef.current,
+        {
+          publicKey: config.publicKey,
+        }
+      );
+
+      if (res.status === 200 || res.text === "OK") {
+        setFormStatus({
+          message: "Message sent. We'll get back to you shortly.",
+          status: "success",
+          showAlert: true,
+        });
+        formRef.current.reset();
+      }
+    } catch (error) {
+      setFormStatus({
+        message: "Something went wrong. Try again later.",
+        status: "error",
+        showAlert: true,
+      });
+      console.log(error);
+    }
+  };
+
   return (
     <>
+      <Alert
+        showAlert={formStatus.showAlert}
+        status={formStatus.status}
+        message={formStatus.message}
+        resetFormStatus={resetFormStatus}
+      />
       <Header>
         <div className="contact">
           <div className="left">
@@ -33,12 +98,16 @@ export default function Contact() {
           <div className="right">
             <div className="contact-form-box">
               <h2 className="light">Get in touch with us</h2>
-              <form className="contact-form">
+              <form
+                className="contact-form"
+                onSubmit={sendMessage}
+                ref={formRef}
+              >
                 <div className="form-group">
                   <label htmlFor="name">Your name</label>
                   <input
                     type="text"
-                    name="name"
+                    name="from_name"
                     id="name"
                     placeholder="Your name"
                     required
@@ -48,7 +117,7 @@ export default function Contact() {
                   <label htmlFor="email">Your email</label>
                   <input
                     type="email"
-                    name="email"
+                    name="from_email"
                     id="email"
                     placeholder="Your email"
                     required

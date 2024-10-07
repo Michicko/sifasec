@@ -1,0 +1,62 @@
+#alert-dialog {
+  border: none;
+  outline: none;
+  background: var(--white);
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+#alert-dialog::backdrop {
+  background: transparent;
+}
+
+.alert-box {
+  border-radius: 0.5rem;
+  min-height: 6rem;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.alert-box p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.alert-box.success {
+  background: rgb(207, 247, 207);
+}
+
+.alert-box.success p {
+  color: green;
+}
+
+.alert-box.error {
+  background: rgb(255, 223, 223);
+}
+
+.alert-box.error p {
+  color: red;
+}
+
+.close-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.close-btn .icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.alert-box.success button {
+  color: green;
+}
+
+.alert-box.error button {
+  color: red;
+}
