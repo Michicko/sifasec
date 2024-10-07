@@ -1,6 +1,5 @@
 .newsletter {
   width: 100%;
-  max-width: 26rem;
   background: var(--blue-400);
   padding: 2rem;
   border-radius: 1rem;
@@ -58,6 +57,8 @@
   margin-right: 0.5rem !important;
 }
 
-.newsletter-btn .btn-icon {
-  /* margin-right: 0 !important; */
+@media only screen and (min-width: 768px) {
+  .newsletter {
+    max-width: 28rem;
+  }
 }
