@@ -10,6 +10,36 @@ import Industries from "../Components/Industries/Industries";
 export default function Services() {
   return (
     <>
+      <meta charSet="utf-8" />
+      <title>Cyber Security solutions and services - Sifa</title>
+      <meta property="og:title" content="solutions and services" />
+      <meta
+        property="description"
+        content="A better source of protection for better tomorrow"
+      />
+      <meta
+        property="og:description"
+        content="A better source of protection for better tomorrow"
+      />
+      <meta property="og:site_name" content="Sifasec.com" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={`http://sifasec.com/services/`} />
+      <meta
+        property="og:image"
+        content={
+          "https://res.cloudinary.com/dc6hetgln/image/upload/v1692905969/sifasec/images/services-banner_rg5dpx.webp"
+        }
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@Sifasec" />
+      <meta
+        name="twitter:image"
+        content={
+          "https://res.cloudinary.com/dc6hetgln/image/upload/v1692905969/sifasec/images/services-banner_rg5dpx.webp"
+        }
+      />
       <Header noBottom={true}>
         <HeaderTop noText={false}>
           <h1>
@@ -35,10 +65,10 @@ export default function Services() {
         </h2>
         <div className="texts">
           <p>
-            Whether you&apos;re building, operating, or optimizing your cybersecurity
-            strategy, we&apos;ll help you elevate your program so you can access new
-            revenue streams, realize greater efficiencies, and get to market
-            faster.
+            Whether you&apos;re building, operating, or optimizing your
+            cybersecurity strategy, we&apos;ll help you elevate your program so
+            you can access new revenue streams, realize greater efficiencies,
+            and get to market faster.
           </p>
           <p>
             Our services, technology, and innovative approaches will keep you
@@ -66,8 +96,9 @@ export default function Services() {
             industries accelerate security, maximize productivity, preserve user
             experience, and lower total cost of ownership. We&apos;ll help you
             understand your attack surface, gain insight into emergent threats
-            and be well-equipped to react. We&apos;ll give you a path to collaborate
-            and the confidence to take on tomorrow&apos;s challenge securely.
+            and be well-equipped to react. We&apos;ll give you a path to
+            collaborate and the confidence to take on tomorrow&apos;s challenge
+            securely.
           </p>
         </div>
         <div className="trusts">

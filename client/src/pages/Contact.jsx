@@ -9,6 +9,7 @@ import {
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../Components/Alert/Alert";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -69,6 +70,22 @@ export default function Contact() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact - Sifa security</title>
+        <meta
+          name="description"
+          content="Contact sifa security today for your cybersecurity needs."
+        />
+        <meta property="og:title" content="Contact" />
+        <meta
+          property="og:description"
+          content="Contact Sifa security today for your cybersecurity needs."
+        />
+        <meta
+          name="keywords"
+          content="Sifa Sifasec sifa security, cybersecurity, cybersecurity near me, cloud security, managed cloud services, pen testing, cybersecurity compliance"
+        />
+      </Helmet>
       <Alert
         showAlert={formStatus.showAlert}
         status={formStatus.status}

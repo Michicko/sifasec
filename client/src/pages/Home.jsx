@@ -5,10 +5,40 @@ import Services from "../Components/Services/Services";
 import Industries from "../Components/Industries/Industries";
 import Ca from "../Components/Ca/Ca";
 import Button from "../Components/Button";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Sifa Cyber Security services | Leading Managed Detection and Response
+        </title>
+        <link rel="canonical" href="http://sifasec.com" />
+        <meta
+          name="description"
+          content="Sifa security services help innovators take on tomorrow's challenge securely with our cutting-edge technology and comprehensive cybersecurity solutions"
+        />
+        <meta
+          name="keywords"
+          content="sifa security, sifasec, sifa sec, cybersecurity consulting, cloud security consulting, cyber security consultant, cloud security consulting services, cybersecurity companies near me, most popular cybersecurity companies, cybersecurity, cyber risk, cybersecurity advisor, cybersecurity risk assessment, cyber security and risk management, cyber risk consultant, cloud, cloud security, cyber threat and vulnerability management perimeter security internet of things iot security infosec gap analysis"
+        />
+        <meta property="og:title" content="Home" />
+        <meta
+          property="og:description"
+          content="Sifa security services help innovators take on tomorrow's challenge securely with our cutting-edge technology and comprehensive cybersecurity solutions"
+        />
+        <meta property="og:site_name" content="Sifasec.com" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://sifasec.com/" />
+        <meta property="og:image" content={"/images/logo-icon-with-bg.jpeg"} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@Sifasec" />
+        <meta name="twitter:image" content={"/images/logo-icon-with-bg.jpeg"} />
+      </Helmet>
       <Header>
         <HeaderTop>
           <h1>Cybersecurity for Innovators of the 21st Century</h1>
