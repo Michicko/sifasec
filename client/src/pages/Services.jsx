@@ -6,10 +6,11 @@ import Card from "../Components/Services/Service";
 import { v4 as uuid } from "uuid";
 import Ca from "../Components/Ca/Ca";
 import Industries from "../Components/Industries/Industries";
+import Page from "../Components/Page";
 
 export default function Services() {
   return (
-    <>
+    <Page>
       <meta charSet="utf-8" />
       <title>Cyber Security solutions and services - Sifa</title>
       <meta property="og:title" content="solutions and services" />
@@ -108,6 +109,6 @@ export default function Services() {
         </div>
       </section>
       <Ca />
-    </>
+    </Page>
   );
 }

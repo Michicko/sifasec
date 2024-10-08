@@ -10,6 +10,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../Components/Alert/Alert";
 import { Helmet } from "react-helmet-async";
+import Page from "../Components/Page";
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -69,7 +70,7 @@ export default function Contact() {
   };
 
   return (
-    <>
+    <Page>
       <Helmet>
         <title>Contact - Sifa security</title>
         <meta
@@ -161,6 +162,6 @@ export default function Contact() {
           </div>
         </div>
       </Header>
-    </>
+    </Page>
   );
 }

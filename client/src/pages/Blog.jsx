@@ -1,9 +1,10 @@
 import Header from "../Components/Layout/Header";
 import HeaderTop from "../Components/Layout/HeaderTop";
+import Page from "../Components/Page";
 
 export default function Blog() {
   return (
-    <>
+    <Page>
       <Header noBottom={true}>
         <HeaderTop>
           <h1>Blog and Articles</h1>
@@ -17,6 +18,6 @@ export default function Blog() {
       <section className="section min section-articles">
         <p>No articles available.</p>
       </section>
-    </>
+    </Page>
   );
 }

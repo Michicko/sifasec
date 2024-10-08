@@ -6,10 +6,11 @@ import Industries from "../Components/Industries/Industries";
 import Ca from "../Components/Ca/Ca";
 import Button from "../Components/Button";
 import { Helmet } from "react-helmet-async";
+import Page from "../Components/Page";
 
 export default function Home() {
   return (
-    <>
+    <Page>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -80,6 +81,6 @@ export default function Home() {
         </div>
       </section>
       <Ca />
-    </>
+    </Page>
   );
 }

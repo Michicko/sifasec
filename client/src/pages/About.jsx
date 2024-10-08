@@ -6,10 +6,11 @@ import { experiences } from "../data";
 import Service from "../Components/Services/Service";
 import { v4 as uuid } from "uuid";
 import { Helmet } from "react-helmet-async";
+import Page from "../Components/Page";
 
 export default function About() {
   return (
-    <>
+    <Page>
       <Helmet>
         <meta charSet="utf-8" />
         <title>About - Sifa</title>
@@ -97,6 +98,6 @@ export default function About() {
           <Button text={"Talk with Sifasec"} url={"/contact"} />
         </div>
       </section>
-    </>
+    </Page>
   );
 }

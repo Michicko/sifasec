@@ -1,9 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Root from "./Components/Layout/Root";
 import useScrollToTop from "./hooks/useScrollToTop";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "./Components/ErrorBoundary.jsx";
+import ModalProvider from "./providers/ModalProvider.jsx";
+import FallbackProvider from "./providers/FallbackProvider.jsx";
+import "nprogress/nprogress.css";
 
 const Home = lazy(() => import("./pages/Home.jsx"));
 const About = lazy(() => import("./pages/About.jsx"));
@@ -16,29 +19,55 @@ export default function App() {
   useScrollToTop();
   return (
     <HelmetProvider>
-      <Routes>
-        <Route
-          element={
-            <Suspense fallback={null}>
-              <Root />
-            </Suspense>
-          }
-        >
-          <Route
-            index
-            element={
-              <ErrorBoundary>
-                <Home />
-              </ErrorBoundary>
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="*" element={<Error404 />} />
-        </Route>
-      </Routes>
+      <ModalProvider>
+        <FallbackProvider>
+          <Routes>
+            <Route element={<Root />}>
+              <Route
+                index
+                element={
+                  <ErrorBoundary>
+                    <Home />
+                  </ErrorBoundary>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <ErrorBoundary>
+                    <About />
+                  </ErrorBoundary>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <ErrorBoundary>
+                    <Contact />
+                  </ErrorBoundary>
+                }
+              />
+              <Route
+                path="/services"
+                element={
+                  <ErrorBoundary>
+                    <Services />
+                  </ErrorBoundary>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <ErrorBoundary>
+                    <Blog />
+                  </ErrorBoundary>
+                }
+              />
+              <Route path="*" element={<Error404 />} />
+            </Route>
+          </Routes>
+        </FallbackProvider>
+      </ModalProvider>
     </HelmetProvider>
   );
 }

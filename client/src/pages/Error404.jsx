@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Header from "../Components/Layout/Header";
 import HeaderTop from "../Components/Layout/HeaderTop";
+import Page from "../Components/Page";
 
 export default function Error404() {
   return (
-    <>
+    <Page>
       <Header noBottom={true}>
         <HeaderTop>
           <h1>404 | Page not found</h1>
@@ -27,6 +28,6 @@ export default function Error404() {
           </div>
         </div>
       </Header>
-    </>
+    </Page>
   );
 }
